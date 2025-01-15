@@ -1,1 +1,1 @@
-# Repository for SSU ETEC2101_01 for Spring 2025
+# Repository for SSU ETEC2101_01 for Spring 2025.
