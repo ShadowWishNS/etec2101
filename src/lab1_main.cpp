@@ -9,5 +9,3 @@ int main(int argc, char** argv)
 
 	example::PersonDatabase PD(". .\\. .\\media\\persondb. txt");
 }
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
