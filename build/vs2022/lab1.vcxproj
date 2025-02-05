@@ -83,10 +83,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="lab1.h" />
+    <ClCompile Include="..\..\src\lab1_main.cpp" />
+    <ClCompile Include="..\..\src\person_database.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\src\lab1_main.cpp" />
+    <ClInclude Include="..\..\include\person_database.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
