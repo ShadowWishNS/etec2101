@@ -99,7 +99,54 @@ namespace ssuds
 			my_array_size++;
 		}
 
+		void insert(unsigned int index, T new_value)
+		{
+			if (index > my_array_size)
+			{
+				throw std::out_of_range("Index is out of range.");
+			}
 
+			if (my_array_size == my_array_capacity)
+			{
+				unsigned int new_capacity;
+				if (my_array_capacity == 0)
+				{
+					new_capacity = 5;
+				}
+				else
+				{
+					new_capacity = my_array_capacity * 2;
+				}
+				T* new_array = new T[new_capacity];
+
+				for (unsigned int i = 0; i < index; i++)
+				{
+					new_array[i] = my_array[i];
+				}
+
+				new_array[index] = new_value;
+
+				for (unsigned int i = index; i < my_array_size; i++)
+				{
+					new_array[i + 1] = my_array[i];
+				}
+
+				delete[] my_array;
+				my_array = new_array;
+				my_array_capacity = new_capacity;
+			}
+			else
+			{
+				for (unsigned int i = my_array_size; i > index; i--)
+				{
+					my_array[i] = my_array[i - 1];
+				}
+
+				my_array[index] = new_value;
+			}
+
+			my_array_size++;
+		}
 
 		void remove(unsigned int id)
 		{
