@@ -13,13 +13,6 @@ namespace ssuds
 	public:
 		ArrayList()
 		{
-			// Option1: allocate the array to some small size
-			my_array_capacity = 5;
-			my_array = new T[my_array_capacity];
-			my_array_size = 0;
-
-			// Option2: don't allocate the array just yet -- wait until first
-			// append/insert/prepend
 			my_array_capacity = 0;
 			my_array_size = 0;
 			my_array = nullptr;
