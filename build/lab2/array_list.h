@@ -30,6 +30,15 @@ namespace ssuds
 			delete[] my_array;
 		}
 
+		T& at(unsigned int index)
+		{
+			if (index >= my_array_size)
+			{
+				throw std::out_of_range("Index is out of range.");
+			}
+			return my_array[index];
+		}
+
 		void append(const T& new_value)
 		{
 			// This *might* make the array bigger....
@@ -84,16 +93,18 @@ namespace ssuds
 
 		void remove(unsigned int id)
 		{
-			// When you remove something, you need to take all values after that index and move them
-			// "down" one index.  You might need to shrink the array if we drop below half our capacity,
-			// a "shrink" operation is needed.
-		}
+			if (id >= my_array_size)
+			{
+				return; // out of array end
+			}
 
-		T at(unsigned int index) const
-		{
-			// This should raise a std::out_of_range error if index is invalid (index greater than
-			// or equal to my_array_size).  Otherwise return the value at that index
-			return my_array[index];
+			for (unsigned int i = id; i < my_array_size - 1; i++)
+			{
+				my_array[i] = my_array[i + 1];
+			}
+
+			my_array_size--;
+
 		}
 
 
