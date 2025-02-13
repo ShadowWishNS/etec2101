@@ -39,6 +39,16 @@ namespace ssuds
 			return my_array[index];
 		}
 
+		unsigned int size() const
+		{
+			return my_array_size;
+		}
+
+		unsigned int capacity() const
+		{
+			return my_array_capacity;
+		}
+
 		void append(const T& new_value)
 		{
 			// This *might* make the array bigger....
