@@ -34,7 +34,7 @@ namespace ssuds
 		{
 			if (index >= my_array_size)
 			{
-				throw std::out_of_range("Index is out of range.");
+				throw std::out_of_range("Index out of range.");
 			}
 			return my_array[index];
 		}
