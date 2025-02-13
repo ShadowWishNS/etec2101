@@ -164,15 +164,22 @@ namespace ssuds
 
 		}
 
-
-		//int find(const T& search_value)
-		//{
-			// We want to return the index where search_value first occurs, or -1 if it's not found
-		//}
-
-		int find(const T& search_value, unsigned int start_index = 0)
+		int find(const T& value, unsigned int start_index = 0)
 		{
-			// Starting at start_index, do the search above
+			if (start_index >= my_array_size)
+			{
+				return -1;
+			}
+
+			for (unsigned int i = start_index; i < my_array_size; i++)
+			{
+				if (my_array[i] == value)
+				{
+					return i;
+				}
+			}
+
+			return -1;
 		}
 
 
