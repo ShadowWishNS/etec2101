@@ -51,14 +51,29 @@ namespace ssuds
 
 		void append(const T& new_value)
 		{
-			// This *might* make the array bigger....
-			// IF the size == capacity, do the "Grow" operation
-			//     Make a new temporary array (double our current capacity)
-			//     Copy over data from current array to the new one
-			//     Free up the old one
-			//     Make my_array point to the bigger array
-			//     Double capacity value.
-			// If size < capacity, just do this
+			if (my_array_size == my_array_capacity)
+			{
+				unsigned int new_capacity;
+				if (my_array_capacity == 0)
+				{
+					new_capacity = 5;
+				}
+				else
+				{
+					new_capacity = my_array_capacity * 2;
+				}
+				T* new_array = new T[new_capacity];
+
+				for (unsigned int i = 0; i < my_array_size; i++)
+				{
+					new_array[i] = my_array[i];
+				}
+
+				delete[] my_array;
+				my_array = new_array;
+				my_array_capacity = new_capacity;
+			}
+
 			my_array[my_array_size] = new_value;
 			my_array_size++;
 		}
