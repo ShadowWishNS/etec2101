@@ -192,6 +192,9 @@ namespace ssuds
 
 
 		// ostream is the base class for all output-based streams (cout, ofstream)
+
+		// **DANIEL NOTE** Honestly just didn't get to this.
+
 		void output(std::ostream& os)
 		{
 			os << "[";
@@ -201,3 +204,7 @@ namespace ssuds
 
 	};
 }
+
+// PS: Dumb thing to not realize but im not entirely sure how to
+// "marked with the tag “v0.2”" for github, and didn't even notice until
+// pushing stuff until now.
